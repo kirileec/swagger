@@ -76,7 +76,7 @@ func (swagger *Swagger) Install(s *ghttp.Server) error {
 		}
 	}
 	// The swagger resource files are served as static file service.
-	s.AddStaticPath("/swagger", "swagger")
+	s.AddStaticPath("/test/swagger", "swagger")
 	// It here uses HOOK feature handling basic auth authentication and swagger.json modification.
 	s.Group("/swagger", func(group *ghttp.RouterGroup) {
 		group.Hook("/*", ghttp.HOOK_BEFORE_SERVE, func(r *ghttp.Request) {
